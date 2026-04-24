@@ -18,6 +18,7 @@ export default defineConfig({
       { text: '深度思考', link: '/04-deepthink' },
       { text: '飞书集成', link: '/05-feishu' },
       { text: '本地记忆', link: '/06-memos' },
+      { text: 'Claude Code', link: '/08-claude-code' },
       { text: '工具链', link: '/07-tools' },
     ],
     sidebar: {
@@ -29,6 +30,7 @@ export default defineConfig({
         { text: '深度思考', link: '/04-deepthink' },
         { text: '飞书集成', link: '/05-feishu' },
         { text: '本地记忆', link: '/06-memos' },
+        { text: 'Claude Code', link: '/08-claude-code' },
         { text: '工具链速查', link: '/07-tools' },
       ]
     },
