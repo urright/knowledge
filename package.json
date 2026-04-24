@@ -1,0 +1,13 @@
+{
+  "name": "hermes-agent-knowledge-base",
+  "version": "1.0.0",
+  "description": "Hermes Agent 知识库 - VitePress 静态网站",
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "vitepress build .",
+    "preview": "vitepress preview ."
+  },
+  "devDependencies": {
+    "vitepress": "latest"
+  }
+}
