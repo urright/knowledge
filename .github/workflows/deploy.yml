@@ -8,6 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,7 +27,10 @@ jobs:
         run: npm run build
 
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy .vitepress/dist --project-name=hermes-knowledge
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: hermes-knowledge
+          directory: .vitepress/dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
